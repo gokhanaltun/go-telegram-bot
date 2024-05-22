@@ -20,7 +20,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/gokhanaltun/go-telegram-bot"
+	bot "github.com/gokhanaltun/go-telegram-bot"
 	"github.com/gokhanaltun/go-telegram-bot/models"
 )
 

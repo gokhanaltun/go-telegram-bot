@@ -20,8 +20,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/go-telegram/bot"
-	"github.com/go-telegram/bot/models"
+	"github.com/gokhanaltun/go-telegram-bot"
+	"github.com/gokhanaltun/go-telegram-bot/models"
 )
 
 // Send any text message to the bot after the bot has been started
@@ -61,7 +61,7 @@ Go version: **1.18**
 Install the dependencies:
 
 ```bash
-go get -u github.com/go-telegram/bot
+go get -u github.com/gokhanaltun/go-telegram-bot
 ```
 
 Initialize and run the bot:

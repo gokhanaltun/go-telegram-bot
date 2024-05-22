@@ -6,8 +6,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/go-telegram/bot"
-	"github.com/go-telegram/bot/models"
+	bot "github.com/gokhanaltun/go-telegram-bot"
+	"github.com/gokhanaltun/go-telegram-bot/models"
 )
 
 // Payments example

@@ -3,7 +3,7 @@ package bot
 import (
 	"context"
 
-	"github.com/go-telegram/bot/models"
+	"github.com/gokhanaltun/go-telegram-bot/models"
 )
 
 func applyMiddlewares(h HandlerFunc, m ...Middleware) HandlerFunc {
@@ -44,6 +44,13 @@ func (b *Bot) findHandler(handlerType HandlerType, upd *models.Update) HandlerFu
 			if h.match(upd) {
 				return h.handler
 			}
+		}
+	}
+
+	if b.conversationHandler != nil {
+		hf := b.conversationHandler.getStageFunction(upd)
+		if hf != nil {
+			return hf
 		}
 	}
 

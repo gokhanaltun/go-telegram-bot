@@ -1,7 +1,7 @@
 package bot
 
 import (
-	"github.com/go-telegram/bot/models"
+	"github.com/gokhanaltun/go-telegram-bot/models"
 )
 
 type SetWebhookParams struct {

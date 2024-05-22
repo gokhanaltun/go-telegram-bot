@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-telegram/bot/models"
+	"github.com/gokhanaltun/go-telegram-bot/models"
 )
 
 const (
@@ -43,8 +43,9 @@ type Bot struct {
 	middlewaresMx *sync.RWMutex
 	middlewares   []Middleware
 
-	handlersMx *sync.RWMutex
-	handlers   map[string]handler
+	handlersMx          *sync.RWMutex
+	handlers            map[string]handler
+	conversationHandler *ConversationHandler
 
 	client           HttpClient
 	lastUpdateID     int64

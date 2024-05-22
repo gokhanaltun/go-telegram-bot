@@ -5,8 +5,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/go-telegram/bot"
-	"github.com/go-telegram/bot/models"
+	bot "github.com/gokhanaltun/go-telegram-bot"
+	"github.com/gokhanaltun/go-telegram-bot/models"
 )
 
 // Send any text message to the bot after the bot has been started
@@ -30,10 +30,8 @@ func main() {
 }
 
 func handler(ctx context.Context, b *bot.Bot, update *models.Update) {
-	if update.Message != nil {
-		b.SendMessage(ctx, &bot.SendMessageParams{
-			ChatID: update.Message.Chat.ID,
-			Text:   update.Message.Text,
-		})
-	}
+	b.SendMessage(ctx, &bot.SendMessageParams{
+		ChatID: update.Message.Chat.ID,
+		Text:   update.Message.Text,
+	})
 }

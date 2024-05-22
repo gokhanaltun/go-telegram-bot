@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/go-telegram/bot"
+	bot "github.com/gokhanaltun/go-telegram-bot"
 )
 
 func main() {

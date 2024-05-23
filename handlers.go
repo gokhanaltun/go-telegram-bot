@@ -53,7 +53,7 @@ func (h handler) match(update *models.Update) bool {
 	}
 	if h.matchType == MatchTypePrefix {
 		hasPrefix := strings.HasPrefix(data, h.pattern)
-		if hasPrefix {
+		if hasPrefix && h.handlerType == HandlerTypeMessageText {
 			update.Message.Args = strings.Split(update.Message.Text, " ")[1:]
 		}
 		return hasPrefix

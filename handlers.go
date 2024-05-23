@@ -52,7 +52,11 @@ func (h handler) match(update *models.Update) bool {
 		return data == h.pattern
 	}
 	if h.matchType == MatchTypePrefix {
-		return strings.HasPrefix(data, h.pattern)
+		hasPrefix := strings.HasPrefix(data, h.pattern)
+		if hasPrefix {
+			update.Message.Args = strings.Split(update.Message.Text, " ")[1:]
+		}
+		return hasPrefix
 	}
 	if h.matchType == MatchTypeContains {
 		return strings.Contains(data, h.pattern)

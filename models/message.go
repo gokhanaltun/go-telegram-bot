@@ -139,4 +139,5 @@ type Message struct {
 	VoiceChatParticipantsInvited  *VoiceChatParticipantsInvited  `json:"voice_chat_participants_invited,omitempty"`
 	WebAppData                    *WebAppData                    `json:"web_app_data,omitempty"`
 	ReplyMarkup                   InlineKeyboardMarkup           `json:"reply_markup,omitempty"`
+	Args                          []string
 }

@@ -24,7 +24,7 @@ func main() {
 		bot.WithDefaultHandler(defaultHandler),
 	}
 
-	b, err := bot.New("7081458788:AAFJJucpaSTMJv2mTKWBOBd80MiS-KbVvbY", opts...)
+	b, err := bot.New("EXAMPLE_TELEGRAM_BOT_TOKEN", opts...)
 	if err != nil {
 		panic(err)
 	}

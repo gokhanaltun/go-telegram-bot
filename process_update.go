@@ -29,6 +29,7 @@ func (b *Bot) ProcessUpdate(ctx context.Context, upd *models.Update) {
 		h = b.findHandler(HandlerTypeMessageText, upd)
 		return
 	}
+
 	if upd.CallbackQuery != nil {
 		h = b.findHandler(HandlerTypeCallbackQueryData, upd)
 		return

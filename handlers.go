@@ -20,6 +20,7 @@ const (
 	MatchTypeExact MatchType = iota
 	MatchTypePrefix
 	MatchTypeContains
+	MatchTypeWebAppData
 
 	matchTypeRegexp
 	matchTypeFunc
@@ -63,6 +64,10 @@ func (h handler) match(update *models.Update) bool {
 	}
 	if h.matchType == matchTypeRegexp {
 		return h.re.Match([]byte(data))
+	}
+
+	if h.matchType == MatchTypeWebAppData {
+		return update.Message.WebAppData != nil
 	}
 	return false
 }

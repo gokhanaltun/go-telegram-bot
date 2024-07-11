@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram WebApp Example</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<script type="text/javascript">
+
+    Telegram.WebApp.ready();
+
+    Telegram.WebApp.MainButton.setText('Send Data').show().onClick(function () {
+        const data = JSON.stringify({ data1: "data1", data2: "data2" });
+        Telegram.WebApp.sendData(data);
+    });
+
+
+</script>
+
+<body>
+</body>
+<script type="text/javascript">
+    Telegram.WebApp.expand();
+</script>
+
+</html>
